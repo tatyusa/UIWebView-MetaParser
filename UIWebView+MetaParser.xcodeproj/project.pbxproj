@@ -21,6 +21,9 @@
 		3667149617E575190073926F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3667147717E575190073926F /* Foundation.framework */; };
 		3667149E17E575190073926F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3667149C17E575190073926F /* InfoPlist.strings */; };
 		366714A117E575190073926F /* UIWebView_MetaParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 366714A017E575190073926F /* UIWebView_MetaParserTests.m */; };
+		366714AD17E575540073926F /* UIWebView+MetaParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 366714AC17E575540073926F /* UIWebView+MetaParser.m */; };
+		366714B017E575B50073926F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366714AF17E575B50073926F /* ViewController.m */; };
+		3670EF8617E6D02500F7BA1C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3670EF8517E6D02500F7BA1C /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		3667149D17E575190073926F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3667149F17E575190073926F /* UIWebView_MetaParserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIWebView_MetaParserTests.h; sourceTree = "<group>"; };
 		366714A017E575190073926F /* UIWebView_MetaParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIWebView_MetaParserTests.m; sourceTree = "<group>"; };
+		366714AB17E575540073926F /* UIWebView+MetaParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+MetaParser.h"; path = "Vender/UIWebView+MetaParser.h"; sourceTree = "<group>"; };
+		366714AC17E575540073926F /* UIWebView+MetaParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+MetaParser.m"; path = "Vender/UIWebView+MetaParser.m"; sourceTree = "<group>"; };
+		366714AE17E575B50073926F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		366714AF17E575B50073926F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3670EF8517E6D02500F7BA1C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 		3667146917E575180073926F = {
 			isa = PBXGroup;
 			children = (
+				366714AA17E5752D0073926F /* Vender */,
 				3667147B17E575190073926F /* UIWebView+MetaParser */,
 				3667149917E575190073926F /* UIWebView+MetaParserTests */,
 				3667147417E575190073926F /* Frameworks */,
@@ -112,8 +121,11 @@
 		3667147B17E575190073926F /* UIWebView+MetaParser */ = {
 			isa = PBXGroup;
 			children = (
+				3670EF8517E6D02500F7BA1C /* index.html */,
 				3667148417E575190073926F /* AppDelegate.h */,
 				3667148517E575190073926F /* AppDelegate.m */,
+				366714AE17E575B50073926F /* ViewController.h */,
+				366714AF17E575B50073926F /* ViewController.m */,
 				3667147C17E575190073926F /* Supporting Files */,
 			);
 			path = "UIWebView+MetaParser";
@@ -150,6 +162,15 @@
 				3667149C17E575190073926F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		366714AA17E5752D0073926F /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				366714AB17E575540073926F /* UIWebView+MetaParser.h */,
+				366714AC17E575540073926F /* UIWebView+MetaParser.m */,
+			);
+			name = Vender;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +248,7 @@
 				3667148817E575190073926F /* Default.png in Resources */,
 				3667148A17E575190073926F /* Default@2x.png in Resources */,
 				3667148C17E575190073926F /* Default-568h@2x.png in Resources */,
+				3670EF8617E6D02500F7BA1C /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +285,8 @@
 			files = (
 				3667148217E575190073926F /* main.m in Sources */,
 				3667148617E575190073926F /* AppDelegate.m in Sources */,
+				366714AD17E575540073926F /* UIWebView+MetaParser.m in Sources */,
+				366714B017E575B50073926F /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +390,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UIWebView+MetaParser/UIWebView+MetaParser-Prefix.pch";
 				INFOPLIST_FILE = "UIWebView+MetaParser/UIWebView+MetaParser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -377,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UIWebView+MetaParser/UIWebView+MetaParser-Prefix.pch";
 				INFOPLIST_FILE = "UIWebView+MetaParser/UIWebView+MetaParser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -435,6 +461,7 @@
 				366714A617E575190073926F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		366714A717E575190073926F /* Build configuration list for PBXNativeTarget "UIWebView+MetaParserTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +470,7 @@
 				366714A917E575190073926F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

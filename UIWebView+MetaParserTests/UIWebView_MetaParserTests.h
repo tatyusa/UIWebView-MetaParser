@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface UIWebView_MetaParserTests : SenTestCase
+@interface UIWebView_MetaParserTests : SenTestCase<UIWebViewDelegate>
 
 @end

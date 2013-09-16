@@ -7,26 +7,29 @@
 //
 
 #import "UIWebView_MetaParserTests.h"
+#import "UIWebView+MetaParser.h"
 
 @implementation UIWebView_MetaParserTests
 
-- (void)setUp
+- (void)testMetaParser
 {
-    [super setUp];
+    UIWebView *webView = [[UIWebView alloc] init];
+    [webView setDelegate:self];
     
-    // Set-up code here.
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]]];
+    
+    do {
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.1]];
+    } while (webView.loading);
+    
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
-}
 
-- (void)testExample
+- (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    STFail(@"Unit tests are not implemented yet in UIWebView+MetaParserTests");
+    NSArray *meta = [webView getMetaData];
+    STAssertTrue([meta count]>0, @"Can't get meta data properly.");
 }
 
 @end
