@@ -4,9 +4,12 @@
 ##How To Use
 Once UIWebView loaded HTML resources, you can use `getMetaData` message and get the meta data as NSArray.
 
-	NSArray *meta = [webView getMetaData];
-	NSLog(@"%@",meta);
-	
+	- (void)webViewDidFinishLoad:(UIWebView *)webView
+	{
+		NSArray *meta = [webView getMetaData];
+		NSLog(@"%@",meta);
+	}
+
 	###Console
 	(
         {
